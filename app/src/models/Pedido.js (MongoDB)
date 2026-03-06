@@ -1,0 +1,16 @@
+const mongoose = require('mongoose');
+
+const itemSchema = new mongoose.Schema({
+  idItem: { type: String, required: true },
+  quantidadeItem: { type: Number, required: true, min: 1 },
+  valorItem: { type: Number, required: true, min: 0 }
+});
+
+const pedidoSchema = new mongoose.Schema({
+  numeroPedido: { type: String, required: true, unique: true },
+  valorTotal: { type: Number, required: true, min: 0 },
+  dataCriacao: { type: Date, required: true },
+  items: [itemSchema]
+}, { timestamps: true }); // createdAt, updatedAt
+
+module.exports = mongoose.model('Pedido', pedidoSchema);
