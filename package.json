@@ -1,0 +1,14 @@
+{
+  "name": "api-pedidos-estagio",
+  "version": "1.0.0",
+  "main": "app/index.js",
+  "scripts": {
+    "dev": "node app/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.*",
+    "mongoose": "^7.*",
+    "cors": "^2.*",
+    "dotenv": "^16.*"
+  }
+}
